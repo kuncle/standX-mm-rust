@@ -1,0 +1,35 @@
+# StandX Maker Bot Configuration
+# Copy this file to config.yaml and fill in your private key
+
+wallet:
+  chain: bsc
+  # Private key can also be set via STANDX_PRIVATE_KEY environment variable
+  private_key: ""
+
+# Trading pair
+symbol: BTC-USD
+
+# Order parameters
+order_distance_bps: 10      # Default distance from last_price in bps
+cancel_distance_bps: 5      # Cancel if price gets too close (bps)
+rebalance_distance_bps: 20  # Cancel if price gets too far (bps)
+order_size_btc: 0.01        # Order size per side
+
+# Position control
+max_position_btc: 0.1       # Max position (absolute), pause if exceeded
+
+# Volatility control
+volatility_window_sec: 5    # Observation window in seconds
+volatility_threshold_bps: 5 # Only place orders if volatility below this
+
+# Risk management (optional)
+# take_profit_pct: 5.0      # Close position when profit >= 5%
+# stop_loss_pct: 5.0        # Close position when loss >= 5%
+
+# Minimum balance required to place orders
+min_balance_usd: 100
+
+# Referral (optional)
+# referral:
+#   enabled: true
+#   code: ""

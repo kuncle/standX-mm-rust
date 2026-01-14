@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  standx-mm:
+    build: .
+    container_name: standx-mm
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    environment:
+      - RUST_LOG=info,standx_mm=debug
+      # Recommended: use env var for private key instead of config file
+      # - STANDX_PRIVATE_KEY=${STANDX_PRIVATE_KEY}
+    # Optional: health check
+    # healthcheck:
+    #   test: ["CMD", "pgrep", "-f", "standx-mm"]
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 3
