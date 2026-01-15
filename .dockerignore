@@ -5,5 +5,4 @@ target/
 .kiro/
 *.md
 tests/
-config.yaml
 .env
